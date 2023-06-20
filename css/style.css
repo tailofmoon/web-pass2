@@ -34,6 +34,9 @@ header {
     align-items: center;
     position: relative;
     padding-left: 20px;
+    /* 네비게이션 위에 표시 */
+    position: relative;
+    z-index: 999;
 }
 
 header nav ul.depth1 {
@@ -93,3 +96,81 @@ header nav .depth2.active {
     height: 120px;
     opacity: 1;
 }
+
+#slide {
+    width: 1200px;
+    height: 300px;
+    background: #ccc;
+    margin: 0 auto;
+    /* border: 4px solid red; */
+}
+
+.slider {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.slider .sliders {
+    position: absolute;
+    height: 100%;
+}
+
+/* 기본: 안보임 상태 */
+.slider .sliders a {
+    outline: 4px solid red;
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    opacity: 0;
+    transition-duration: 1s;
+}
+
+/* 보임 상태 */
+.slider .sliders a.active {
+    opacity: 1;
+}
+
+.slider .sliders img {
+    width: 1200px;
+    height: 300px;
+    display: block;
+}
+
+/* main */
+main {
+    width: 1200px;
+    height: 200px;
+    margin: 0 auto;
+    display: flex;
+}
+
+main > .notice {
+    border: 2px solid #000;
+    /* 계산함수: (100% 3분의 1로 나눔) */
+    width: calc(100% / 3);
+}
+main > .banner {
+    border: 2px solid #000;
+    width: calc(100% / 3);
+}
+main > .link {
+    border: 2px solid #000;
+    width: calc(100% / 3);
+}
+
+
+/* 텝 영역 버튼 부*/
+.notice .tab-group { display: flex; }
+.notice .tab-group a {
+    border: 1px solid #999;
+    padding: 4px 1rem;
+    background: #ccc;
+}
+
+.notice .tab-group a.active { background: #fff; }
+
+/* 텝 영역 콘텐츠 부: active 일 때만 보입니다 */
+.notice .tab-content > div { display: none; }
+.notice .tab-content > div.active { display: block;}
