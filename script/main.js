@@ -50,3 +50,17 @@ $(function(){
 
 });
 
+
+// 팝업 
+$(function(){
+    // 공지사항 첫번째 글을 클릭하면
+    $('#content1 ul li:first-child').click(function(){
+        // 팝업창에 active class 추가
+        $('#pop-up').addClass('active');
+    })
+
+    // 팝업창 닫기 버튼
+    $('.btn-close').click(function(){
+        $('#pop-up').removeClass('active');
+    })
+})
